@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MasterQuiz — ꧁༒☬𝓐𝔀𝔀𝓪𝓵☬༒꧂</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="header">MasterQuiz — ꧁༒☬𝓐𝔀𝔀𝓪𝓵☬༒꧂</div>
+
+      <div class="controls-row">
+        <div style="display: flex; gap: 8px; align-items: center">
+          <button id="btnLevels" class="btn">Levels</button>
+          <button id="btnHome" class="btn">Home</button>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center">
+          <label style="font-size: 13px">Music</label>
+          <button id="muteBtn" class="btn">Mute</button>
+          <label style="font-size: 13px">Sound FX</label>
+          <button id="fxBtn" class="btn">FX On</button>
+        </div>
+      </div>
+
+      <div class="levels-card" id="levelsCard">
+        <h3 style="margin-bottom: 8px">Choose a Level</h3>
+        <div class="grid" id="levelGrid"></div>
+
+        <div class="import-area">
+          <div
+            style="
+              display: flex;
+              gap: 8px;
+              justify-content: flex-end;
+              margin-top: 8px;
+            "
+          >
+            <button id="importBtn" class="btn">Load Questions</button>
+            <button id="resetPoolBtn" class="btn">Reset to Built-in</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz -->
+      <div class="quiz-card" id="quizCard">
+        <div class="q-top">
+          <div class="level-badge" id="levelBadge">Level 1</div>
+          <div style="display: flex; align-items: center; gap: 12px">
+            <div class="timer" id="timer">
+              <div id="timerBar" class="timer-bar"></div>
+              <div id="timerText" class="timer-text"></div>
+            </div>
+            <div class="progress-circle" id="qCount">1/15</div>
+          </div>
+        </div>
+
+        <div id="questionArea" class="question-area"></div>
+
+        <div class="controls">
+          <button id="nextBtn" class="btn primary" disabled>Next</button>
+          <button id="quitBtn" class="btn">Quit</button>
+        </div>
+      </div>
+
+      <div id="resultCard" class="levels-card hidden">
+        <h3>Result</h3>
+        <p id="resultText"></p>
+        <div style="display: flex; gap: 8px; justify-content: flex-end">
+          <button id="backBtn" class="btn">Back to Levels</button>
+          <button id="retryBtn" class="btn primary">Retry Level</button>
+        </div>
+      </div>
+
+      <div class="footer">
+        Tip: Click any level to begin. Levels unlock when you score ≥ 80%.
+        Questions shuffle on every attempt.
+      </div>
+    </div>
+
+    <!-- Audio (background) -->
+    <audio id="bgMusic" loop>
+      <source
+        src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_3d0d7b2d7c.mp3?filename=calm-ambient-111347.mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+    <script src="script.js" defer></script>
+  </body>
+</html>
